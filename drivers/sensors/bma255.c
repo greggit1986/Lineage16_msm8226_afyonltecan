@@ -444,7 +444,6 @@ static void bma255_work_func(struct work_struct *work)
 	struct bma255_p *data = container_of(work, struct bma255_p, work);
 	struct timespec ts;
 	int time_hi, time_lo;
-
 	//ts = ktime_to_timespec(alarm_get_elapsed_realtime());
 	data->timestamp = ts.tv_sec * 1000000000ULL + ts.tv_nsec;
 	time_lo = (int)(data->timestamp & TIME_LO_MASK);
